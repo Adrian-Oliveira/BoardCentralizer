@@ -20,10 +20,9 @@ const board = document.getElementById("board-layout-main")
 const sideBar = document.getElementById("sb")
 const topPlayer = document.getElementById("board-layout-player-top")
 
-const computedStyle = window.getComputedStyle(body)
-const rect = topPlayer.getBoundingClientRect();
-
-const topPlayerWidthWithMargins = rect.width + parseFloat(getComputedStyle(topPlayer).marginLeft) + parseFloat(getComputedStyle(topPlayer).marginRight);
+let computedStyle = window.getComputedStyle(body)
+let rect = topPlayer.getBoundingClientRect();
+let topPlayerWidthWithMargins = rect.width + parseFloat(getComputedStyle(topPlayer).marginLeft) + parseFloat(getComputedStyle(topPlayer).marginRight);
 
 
 const screenWidth = body.offsetWidth
@@ -37,7 +36,16 @@ const centralize = ()=>{
         board.style.paddingLeft = `${((screenWidth - boardWidth )/2) - bodyPaddingLeft}px`
     }
     else{
-        board.style.paddingLeft = `${((screenWidth - boardWidth )/2) - bodyPaddingLeft -topPlayerWidthWithMargins}px`
+
+        computedStyle = window.getComputedStyle(body)
+        rect = topPlayer.getBoundingClientRect();
+        topPlayerWidthWithMargins = rect.width + 
+                                          parseFloat(getComputedStyle(topPlayer).marginLeft) + 
+                                          parseFloat(getComputedStyle(topPlayer).marginRight);
+
+        const boardEvaluation = document.getElementById("board-layout-evaluation")
+        
+        board.style.paddingLeft = `${((screenWidth - boardWidth )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth}px`
 
     }
 }
