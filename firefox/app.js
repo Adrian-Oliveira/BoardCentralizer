@@ -46,7 +46,7 @@ const centralize = ()=>{
 
         const boardEvaluation = document.getElementById("board-layout-evaluation")
         
-        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth}px`
+        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth - topPlayerWidthWithMargins}px`
 
     }
 }
