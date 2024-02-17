@@ -15,47 +15,52 @@ line.style.backgroundColor = 'red'; // Color of the line
 document.body.appendChild(line);
 
 
-const body = document.body
-const board = document.getElementById("board-layout-main")
-const sideBar = document.getElementById("sb")
-const topPlayer = document.getElementById("board-layout-player-top")
 
-let computedStyle = window.getComputedStyle(body)
-let rect = topPlayer.getBoundingClientRect();
-let topPlayerWidthWithMargins = rect.width + parseFloat(getComputedStyle(topPlayer).marginLeft) + parseFloat(getComputedStyle(topPlayer).marginRight);
-
-
-const screenWidth = body.offsetWidth
-let bodyPaddingLeft =  parseFloat(computedStyle.getPropertyValue('padding-left'));
-let boardWidth = board.offsetWidth
 
 
 const centralize = ()=>{
+    const body = document.body
+    const sideBar = document.getElementById("sb")
+    const topPlayer = document.getElementById("board-layout-player-top")
+    const board = document.getElementById("board-layout-main")
+    const boardLayout = document.getElementById("board-layout-main")
+
+    const computedStyleBoard = window.getComputedStyle(board);
+    const paddingLeft = parseFloat(computedStyleBoard.paddingLeft);
+    const paddingRight = parseFloat(computedStyleBoard.paddingRight);
+    const contentBoardWidthWithoutPadding = board.clientWidth - paddingLeft - paddingRight;
+
+    const screenWidth = body.offsetWidth
+    const computedStyleBody = window.getComputedStyle(body)
+    const bodyPaddingLeft =  parseFloat(computedStyleBody.getPropertyValue('padding-left'));
+
     if(sideBar.offsetWidth>0){
-        bodyPaddingLeft =  parseFloat(computedStyle.getPropertyValue('padding-left'))
-        board.style.paddingLeft = `${((screenWidth - boardWidth )/2) - bodyPaddingLeft}px`
+        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft}px`
     }
     else{
-
-        computedStyle = window.getComputedStyle(body)
-        rect = topPlayer.getBoundingClientRect();
-        topPlayerWidthWithMargins = rect.width + 
+        const computedStyle = window.getComputedStyle(body)
+        const rect = topPlayer.getBoundingClientRect();
+        const topPlayerWidthWithMargins = rect.width + 
                                           parseFloat(getComputedStyle(topPlayer).marginLeft) + 
                                           parseFloat(getComputedStyle(topPlayer).marginRight);
 
         const boardEvaluation = document.getElementById("board-layout-evaluation")
         
-        board.style.paddingLeft = `${((screenWidth - boardWidth )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth}px`
+        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth}px`
 
     }
 }
 centralize();
 
+
+const sideBar = document.getElementById("sb")
+const board = document.getElementById("board")
 const resizeObserver = new ResizeObserver(() => {
     centralize();
 });
 
 resizeObserver.observe(sideBar);
+resizeObserver.observe(board);
 
 
 
