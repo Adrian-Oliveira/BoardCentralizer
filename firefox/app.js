@@ -19,6 +19,7 @@ document.body.appendChild(line);
 
 
 const centralize = ()=>{
+    console.log("run")
     const body = document.body
     const sideBar = document.getElementById("sb")
     const topPlayer = document.getElementById("board-layout-player-top")
@@ -54,7 +55,7 @@ centralize();
 
 
 const sideBar = document.getElementById("sb")
-const board = document.getElementById("board")
+const board = document.getElementById("board-layout-main")
 const resizeObserver = new ResizeObserver(() => {
     centralize();
 });
