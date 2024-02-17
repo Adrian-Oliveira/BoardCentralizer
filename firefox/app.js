@@ -21,10 +21,10 @@ document.body.appendChild(line);
 const centralize = ()=>{
     console.log("run")
     const body = document.body
-    const sideBar = document.getElementById("sb")
-    const topPlayer = document.getElementById("board-layout-player-top")
     const board = document.getElementById("board-layout-main")
-    const boardLayout = document.getElementById("board-layout-main")
+
+    const boardCoordinates = board.getBoundingClientRect();
+    const leftDistanceBoard = boardCoordinates.left
 
     const computedStyleBoard = window.getComputedStyle(board);
     const paddingLeft = parseFloat(computedStyleBoard.paddingLeft);
@@ -32,24 +32,10 @@ const centralize = ()=>{
     const contentBoardWidthWithoutPadding = board.clientWidth - paddingLeft - paddingRight;
 
     const screenWidth = body.offsetWidth
-    const computedStyleBody = window.getComputedStyle(body)
-    const bodyPaddingLeft =  parseFloat(computedStyleBody.getPropertyValue('padding-left'));
 
-    if(sideBar.offsetWidth>0){
-        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft}px`
-    }
-    else{
-        const computedStyle = window.getComputedStyle(body)
-        const rect = topPlayer.getBoundingClientRect();
-        const topPlayerWidthWithMargins = rect.width + 
-                                          parseFloat(getComputedStyle(topPlayer).marginLeft) + 
-                                          parseFloat(getComputedStyle(topPlayer).marginRight);
+    board.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - leftDistanceBoard}px`
+ 
 
-        const boardEvaluation = document.getElementById("board-layout-evaluation")
-        
-        boardLayout.style.paddingLeft = `${((screenWidth - contentBoardWidthWithoutPadding )/2) - bodyPaddingLeft - boardEvaluation.offsetWidth - topPlayerWidthWithMargins}px`
-
-    }
 }
 centralize();
 
@@ -68,7 +54,7 @@ resizeObserver.observe(board);
 // fixing sidebar-component width
 const liveStats = document.querySelector(".live-stats-component")
 const sideBarComponent = document.querySelector(".sidebar-component")
-
-sideBarComponent.style.width = `${sideBarComponent.offsetWidth +25}px`
+if (sideBarComponent)
+    sideBarComponent.style.width = `${sideBarComponent.offsetWidth +25}px`
 
 
