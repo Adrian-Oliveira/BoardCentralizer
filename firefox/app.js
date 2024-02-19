@@ -16,8 +16,6 @@ document.body.appendChild(line);
 
 
 
-
-
 const centralize = ()=>{
     console.log("run")
     const body = document.body
