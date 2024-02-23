@@ -50,9 +50,6 @@ resizeObserver.observe(board);
 
 
 // fixing sidebar-component width
-const liveStats = document.querySelector(".live-stats-component")
 const sideBarComponent = document.querySelector(".sidebar-component")
 if (sideBarComponent)
-    sideBarComponent.style.width = `${sideBarComponent.offsetWidth +25}px`
-
-
+    sideBarComponent.style.width = `100%`
