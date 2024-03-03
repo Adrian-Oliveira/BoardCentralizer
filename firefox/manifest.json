@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Centralized Board",
+    "name": "Board Centralizer",
     "version": "1.0",
   
-    "description": "Centralize ever chess board in all webpages matching chess.com.",
+    "description": "Centralize ever chess board in all chess.com webpages.",
   
     "icons": {
       "48": "/icons/chess_board_icon.png"
