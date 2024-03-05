@@ -11,7 +11,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.chess.com/*"],
+        "matches": ["*://*.chess.com/puzzles*", "*://*.chess.com/play*", "*://*.chess.com/game*"],
         "js": ["app.js"]
       }
     ]

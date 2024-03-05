@@ -1,5 +1,6 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 3
+    ,
     "name": "Centralized Board",
     "version": "1.0",
   
@@ -11,7 +12,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.chess.com/*"],
+        "matches": ["*://*.chess.com/puzzles*", "*://*.chess.com/play*", "*://*.chess.com/game*"],
         "js": ["app.js"]
       }
     ]
