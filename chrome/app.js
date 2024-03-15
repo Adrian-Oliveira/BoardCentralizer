@@ -1,21 +1,3 @@
-//troubleshooting
-
-// Create a new div element
-const line = document.createElement('div');
-
-// Style the div to represent the vertical red line
-line.style.position = 'fixed';
-line.style.top = '0';
-line.style.bottom = '0';
-line.style.left = '50%'; // Position in the middle horizontally
-line.style.width = '2px'; // Width of the line
-line.style.backgroundColor = 'red'; // Color of the line
-
-// Append the div to the body of the document
-document.body.appendChild(line);
-
-
-
 const centralize = ()=>{
     console.log("run")
     const body = document.body

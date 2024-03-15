@@ -3,7 +3,7 @@
     "name": "Board Centralizer",
     "version": "1.0",
   
-    "description": "Centralize ever chess board in all chess.com webpages.",
+    "description": "Centralize every chessboard on all chess.com webpages.",
   
     "icons": {
       "48": "/icons/chess_board_icon.png"

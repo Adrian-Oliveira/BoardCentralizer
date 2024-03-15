@@ -4,7 +4,7 @@
     "name": "Centralized Board",
     "version": "1.0",
   
-    "description": "Centralize ever chess board in all webpages matching chess.com.",
+    "description": "Centralize every chessboard on all chess.com webpages.",
   
     "icons": {
       "48": "/icons/chess_board_icon.png"
