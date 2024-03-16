@@ -1,6 +1,7 @@
 {
-    "manifest_version": 2,
-    "name": "Board Centralizer",
+    "manifest_version": 3
+    ,
+    "name": "Centralized Board",
     "version": "1.0",
   
     "description": "Centralize every chessboard on all chess.com webpages.",

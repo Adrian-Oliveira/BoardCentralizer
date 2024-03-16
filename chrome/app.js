@@ -1,4 +1,5 @@
 const centralize = ()=>{
+    console.log("run")
     const body = document.body
     const board = document.getElementById("board-layout-main")
 
