@@ -17,9 +17,12 @@ document.body.appendChild(line);
 
 
 const centralize = ()=>{
-    console.log("run")
+    console.log("run23")
     const body = document.body
     const board = document.getElementById("board-layout-main")
+    const ad = document.getElementById("board-layout-ad")
+
+    ad.style.display = "none"
 
     const boardCoordinates = board.getBoundingClientRect();
     const leftDistanceBoard = boardCoordinates.left
