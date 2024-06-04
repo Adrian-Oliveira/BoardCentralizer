@@ -1,4 +1,4 @@
-//troubleshooting
+/* //troubleshooting
 
 // Create a new div element
 const line = document.createElement('div');
@@ -13,11 +13,10 @@ line.style.backgroundColor = 'red'; // Color of the line
 
 // Append the div to the body of the document
 document.body.appendChild(line);
-
+ */
 
 
 const centralize = ()=>{
-    console.log("run")
     const body = document.body
     const board = document.getElementById("board-layout-main")
     const ad = document.getElementById("board-layout-ad")
